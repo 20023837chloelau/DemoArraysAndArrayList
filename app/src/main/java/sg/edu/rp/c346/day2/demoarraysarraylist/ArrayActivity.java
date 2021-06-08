@@ -8,17 +8,29 @@ import android.widget.TextView;
 public class ArrayActivity extends AppCompatActivity {
 
     TextView tv;
+    String[] fruits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_array);
+        setContentView(R.layout.activity_main);
+        this.setTitle("Array");
 
-        tv = findViewById(R.id.textView1);
+        fruits = new String[3];
 
-        //continue view the code in the worksheet
+        fruits[0] = "apple";
+        fruits[1] = "banana";
+        fruits[2] = "cherry";
 
+        tv = findViewById(R.id.textView);
 
+        String text = "Fruits\n";
+        text += "=====\n";
 
+        for (int i = 0; i < fruits.length; i++) {
+            text += fruits[i] + "\n";
+        }
+
+        tv.setText(text);
     }
 }
